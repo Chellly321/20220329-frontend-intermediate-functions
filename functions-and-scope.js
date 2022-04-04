@@ -79,21 +79,18 @@ console.log(calculateAverage(grades));
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
 
-function averageGrade(arrayGrades){
+function averageGrade(array){
     let average = 0;
     for (let i = 0; i < array.length; i++){
-        let currentNum = array[i];
-        average += currentNum;
+        average += array[i];
     }
     average = average / array.length;
     return average;
 }
 console.log(("========== opdracht 2B =========="));
-console.log(calculateAverage(grades));
-console.log(calculateAverage([6, 4, 5]));
-console.log(calculateAverage([8, 9, 4, 6, 10]));
-
-
+console.log(averageGrade(grades));
+console.log(averageGrade([6, 4, 5]));
+console.log(averageGrade([8, 9, 4, 6, 10]));
 
 // ---- Verwachte uitkomsten:
 // averageGrade(grades) geeft 6.642857142857143
@@ -106,6 +103,18 @@ console.log(calculateAverage([8, 9, 4, 6, 10]));
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+function wrapUpToTwoDecimals(array){
+    let average = 0;
+    for (let i = 0; i < array.length; i++){
+        average += array[i];
+    }
+    average = average / array.length;
+    return Math.round(average);
+}
+console.log(("========== opdracht 2C =========="));
+console.log(wrapUpToTwoDecimals(grades));
+console.log(wrapUpToTwoDecimals([6, 4, 5]));
+console.log(wrapUpToTwoDecimals([8, 9, 4, 6, 10]));
 
 
 
@@ -119,7 +128,17 @@ console.log(calculateAverage([8, 9, 4, 6, 10]));
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 9
-
+function checkHighestGrade(value){
+    let highestGrade = 0;
+    for (let i = 0; i < value.length; i++){
+        if (value[i] > highestGrade){
+            highestGrade = value[i];
+        }
+    }
+return highestGrade;
+}
+console.log(("========== opdracht 3A =========="));
+console.log(checkHighestGrade(grades));
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
@@ -130,3 +149,16 @@ console.log(calculateAverage([8, 9, 4, 6, 10]));
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+function checkHighestGrade(value){
+    let highestGrade = 0;
+    for (let i = 0; i < value.length; i++){
+        if (value[i] > highestGrade){
+            highestGrade = value[i];
+        }
+    }
+    return highestGrade;
+}
+console.log(("========== opdracht 3B =========="));
+console.log(checkHighestGrade(grades));
+console.log(checkHighestGrade([6, 4, 5]));
+console.log(checkHighestGrade([8, 9, 4, 6, 10]));
